@@ -1,0 +1,36 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "env2": "^2.0.6",
+    "handlebars": "^4.0.5",
+    "hapi": "^13.0.0",
+    "hapi-auth-basic": "^4.1.0",
+    "inert": "^3.2.0",
+    "joi": "^8.0.4",
+    "path": "^0.12.7",
+    "vision": "^4.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node tests/*",
+    "nodemon": "nodemon ./lib/server.js",
+    "start": "node ./lib/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tasminions/blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tasminions/blog/issues"
+  },
+  "homepage": "https://github.com/tasminions/blog#readme"
+}
