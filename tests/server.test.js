@@ -1,5 +1,6 @@
 const tape    = require('wrapping-tape');
 const server  = require('./../lib/server.js');
+const db = require("../lib/db.js");
 
 tape.module1 = tape({
   startup: function(t){
@@ -68,42 +69,71 @@ tape.module1( 'Testing /about route', function(t){
     t.ok( res.result.indexOf('<!-- this is the about view -->') > -1 ,'"/login" route sends back the about html view');
   });
 });
+//
+// tape.module1( 'Testing /auth route with params', function(t){
+//   const authGood = {username:'admin',password:'password'};
+//   const authOptionsGood = {
+//     method:'POST',
+//     url:'/auth',
+//     headers: authGood
+//   };
+//   t.plan(4);
+//   server.inject( authOptionsGood, function(res){
+//     t.equal( res.statusCode, 200,'about request with correct password results in a 200 status Code');
+//     t.equal( res.result, 'you are the admin', 'user has authenticated correcly (this test will need to be changed later on)!');
+//   });
+//
+//   const authBad = {username:'impostor',password:'blah'};
+//   const authOptionsBad = {
+//     method:'POST',
+//     url:'/auth',
+//     headers: authBad
+//   };
+//   server.inject( authOptionsBad, function(res){
+//     t.equal( res.statusCode, 401,'about request with wrong password results in a 404 status Code');
+//     t.notEqual( res.result, 'you are the admin', 'user has authenticated correcly (this test will need to be changed later on)!');
+//   });
+// });
 
-tape.module1( 'Testing /auth route with params', function(t){
-  const authGood = {username:'admin',password:'password'};
-  const authOptionsGood = {
-    method:'POST',
-    url:'/auth',
-    headers: authGood
-  };
-  t.plan(4);
-  server.inject( authOptionsGood, function(res){
-    t.equal( res.statusCode, 200,'about request with correct password results in a 200 status Code');
-    t.equal( res.result, 'you are the admin', 'user has authenticated correcly (this test will need to be changed later on)!');
-  });
+// tape.module1( 'Testing /dashboard route', function(t){
+//   const dashboardOptions = {
+//     method:'GET',
+//     url:'/dashboard'
+//   };
+//   server.inject( dashboardOptions, function(res){
+//     t.plan(4);
+//     t.equal( res.statusCode, 200,'dashboard request results in a 200 status Code');
+//     t.ok( res.result.indexOf('<!DOCTYPE html>') > -1 ,'"/dashboard" route results in an html being sent back');
+//     t.ok( res.result.indexOf('class="navbar"') > -1 ,'"/dashboard" route fetches default html template (which has a navbar)');
+//     t.ok( res.result.indexOf('<!-- this is the dashboard view -->') > -1 ,'"/dashboard" route sends back the dashboard html view');
+//   });
+// });
 
-  const authBad = {username:'impostor',password:'blah'};
-  const authOptionsBad = {
-    method:'POST',
-    url:'/auth',
-    headers: authBad
-  };
-  server.inject( authOptionsBad, function(res){
-    t.equal( res.statusCode, 401,'about request with wrong password results in a 404 status Code');
-    t.notEqual( res.result, 'you are the admin', 'user has authenticated correcly (this test will need to be changed later on)!');
-  });
-});
+tape.module1("Testing that clicking edit redirects to the editpost page", function(t){
+var newpostOptions = {
+  method: 'POST',
+  url: '/newpost',
+  payload: 'id=12903&title=firstblogpost&author=test&body="hjkfgjh"&comments=&likes=0'
 
-tape.module1( 'Testing /dashboard route', function(t){
-  const dashboardOptions = {
-    method:'GET',
-    url:'/dashboard'
-  };
-  server.inject( dashboardOptions, function(res){
-    t.plan(4);
-    t.equal( res.statusCode, 200,'dashboard request results in a 200 status Code');
-    t.ok( res.result.indexOf('<!DOCTYPE html>') > -1 ,'"/dashboard" route results in an html being sent back');
-    t.ok( res.result.indexOf('class="navbar"') > -1 ,'"/dashboard" route fetches default html template (which has a navbar)');
-    t.ok( res.result.indexOf('<!-- this is the dashboard view -->') > -1 ,'"/dashboard" route sends back the dashboard html view');
-  });
-});
+}
+
+server.inject(newpostOptions, function(res) {
+  console.log(res.result);
+})
+
+
+
+var editpostOptions = {
+  method: 'GET',
+  url: '/editpost?'
+}
+//
+// server.inject( editpostOptions, function(res){
+//
+//   t.plan(4);
+//   t.equal( res.statusCode, 200,'editpost request results in a 200 status Code');
+//   t.ok( res.result.indexOf('<!DOCTYPE html>') > -1 ,'"/editpost" route results in an html being sent back');
+//   t.ok( res.result.indexOf('class="navbar"') > -1 ,'"/editpost" route fetches default html template (which has a navbar)');
+//   t.ok( res.result.indexOf('<!-- this is the editpost view -->') > -1 ,'"/editpost" route sends back the editpost html view');
+// });
+ })
