@@ -36,7 +36,7 @@ tape.module1( 'Testing "/login" route', function(t){
   };
   server.inject( loginOptions, function(res){
     t.plan(4);
-    t.equal( res.statusCode, 200,'/login request results in a 200 status Code');
+    t.equal( res.statusCode, 200,'login request results in a 200 status Code');
     t.ok( res.result.indexOf('<!DOCTYPE html>') > -1 ,'"/login" route results in an html being sent back');
     t.ok( res.result.indexOf('class="navbar"') > -1 ,'"/login" route fetches default html template (which has a navbar)');
     t.ok( res.result.indexOf('<!-- this is the login view -->') > -1 ,'"/login" route sends back the login html view');
@@ -69,6 +69,31 @@ tape.module1( 'Testing /about route', function(t){
   });
 });
 
+tape.module1( 'Testing /auth route with params', function(t){
+  const authGood = {username:'adminTest',password:'password'};
+  const authOptionsGood = {
+    method:'POST',
+    url:'/auth',
+    headers: authGood
+  };
+  t.plan(4);
+  server.inject( authOptionsGood, function(res){
+    t.equal( res.statusCode, 200,'about request with correct password results in a 200 status Code');
+    t.equal( res.result, 'you are the admin', 'user has authenticated correcly (this test will need to be changed later on)!');
+  });
+
+  const authBad = {username:'impostor',password:'blah'};
+  const authOptionsBad = {
+    method:'POST',
+    url:'/auth',
+    headers: authBad
+  };
+  server.inject( authOptionsBad, function(res){
+    t.equal( res.statusCode, 404,'about request with wrong password results in a 404 status Code');
+    t.notEqual( res.result, 'you are the admin', 'user has authenticated correcly (this test will need to be changed later on)!');
+  });
+});
+
 tape.module1( 'Testing /dashboard route', function(t){
   const dashboardOptions = {
     method:'GET',
@@ -80,18 +105,5 @@ tape.module1( 'Testing /dashboard route', function(t){
     t.ok( res.result.indexOf('<!DOCTYPE html>') > -1 ,'"/dashboard" route results in an html being sent back');
     t.ok( res.result.indexOf('class="navbar"') > -1 ,'"/dashboard" route fetches default html template (which has a navbar)');
     t.ok( res.result.indexOf('<!-- this is the dashboard view -->') > -1 ,'"/dashboard" route sends back the dashboard html view');
-  });
-});
-
-tape.module1( 'Testing /auth route with params', function(t){
-  const auth = {username:'adminTest',password:'password'};
-  const authOptions = {
-    method:'POST',
-    url:'/auth?username='+auth.username+'&password='+auth.password
-  };
-  server.inject( authOptions, function(res){
-    t.plan(2);
-    t.equal( res.statusCode, 200,'about request results in a 200 status Code');
-    t.equal( res.result, 'you are the admin', 'user has authenticated correcly (this test will need to be changed later on)!');
   });
 });
