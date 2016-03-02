@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "bcrypt": "^0.8.5",
+    "boom": "^3.1.2",
     "env2": "^2.0.6",
     "handlebars": "^4.0.5",
     "hapi": "^13.0.0",
