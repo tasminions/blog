@@ -1,1 +1,17 @@
 <!-- this is the dashboard view -->
+<div class="userInfo">{{username}}</div>
+<div class="newPost">
+  <form id="blogForm" action="/newpost" method="post">
+    <input type="text" name="posttitle" placeholder="title....">
+    <textarea name="postbody" placeholder="Type here..."></textarea>
+    <input type="submit" value="Submit Post">
+  </form>
+</div>
+<div class="myBlogPosts">
+    {{#each posts}}
+      <h2>{{this.title}}</h2>
+      <a href="/editPost?{{this.id}}"><button>EDIT</button></a>
+    {{else}}
+      <h2>No content</h2>
+    {{/each}}
+</div>
