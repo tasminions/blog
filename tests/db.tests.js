@@ -120,7 +120,17 @@ test("can add users to db", function(t) {
   db.addUser(client, userObj.username, userObj, function(error, reply) {
     t.ok(! error, "no error")
     client.HGETALL('users', function(error, reply) {
-      t.deepEqual(reply[userObj[username]], userObj, "user has been added")
+      t.deepEqual(JSON.parse(reply[userObj.username]), userObj, "user has been added")
+    })
+  })
+})
+
+test("can retrieve userObj", function(t){
+  t.plan(2)
+  db.addUser(client, userObj.username, userObj, function(error, reply) {
+    t.ok(! error, "no error")
+    db.getUser(client, 'dave', function(error, reply) {
+      t.deepEqual(JSON.parse(reply), userObj, "user has been added")
     })
   })
 })
