@@ -16,7 +16,9 @@
     "path": "^0.12.7",
     "vision": "^4.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "wrapping-tape": "0.0.3"
+  },
   "scripts": {
     "test": "node tests/*",
     "nodemon": "nodemon ./lib/server.js",
