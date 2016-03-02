@@ -22,6 +22,7 @@ test = tape({
 })
 
 var testBlogPost = {
+  "id": 7,
   "title": "me",
   "author": "me",
   "date": "1",
@@ -93,6 +94,33 @@ test("test can like post", function(t) {
           })
         })
       })
+    })
+  })
+})
+
+test("can get all posts?", function(t){
+  t.plan(3)
+  db.createBlogPost(client, 7, testBlogPost, function(err, __){
+    t.ok(! err, "no errorrr")
+    db.getPosts(client, "me", function(error, reply){
+      t.ok(! error, "no error" )
+      t.deepEqual(testBlogPost, reply[0], "well done you're great :-)")
+    })
+  })
+})
+
+var userObj = {
+  "username": "dave",
+  "secret": "035729eqdhjnfwr0",
+  "email": "0q8efhid"
+}
+
+test("can add users to db", function(t) {
+  t.plan(2)
+  db.addUser(client, userObj.username, userObj, function(error, reply) {
+    t.ok(! error, "no error")
+    client.HGETALL('users', function(error, reply) {
+      t.deepEqual(reply[userObj[username]], userObj, "user has been added")
     })
   })
 })
