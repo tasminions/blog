@@ -70,7 +70,7 @@ tape.module1( 'Testing /about route', function(t){
 });
 
 tape.module1( 'Testing /auth route with params', function(t){
-  const authGood = {username:'adminTest',password:'password'};
+  const authGood = {username:'admin',password:'password'};
   const authOptionsGood = {
     method:'POST',
     url:'/auth',
@@ -89,7 +89,7 @@ tape.module1( 'Testing /auth route with params', function(t){
     headers: authBad
   };
   server.inject( authOptionsBad, function(res){
-    t.equal( res.statusCode, 404,'about request with wrong password results in a 404 status Code');
+    t.equal( res.statusCode, 401,'about request with wrong password results in a 404 status Code');
     t.notEqual( res.result, 'you are the admin', 'user has authenticated correcly (this test will need to be changed later on)!');
   });
 });
