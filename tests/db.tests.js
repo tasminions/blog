@@ -21,22 +21,23 @@ test = tape({
   }
 })
 
+var testBlogPost = {
+  "title": "me",
+  "author": "me",
+  "date": "1",
+  "body": "memememe",
+  "comments": [],
+  "likes": 0
+}
+
 test("testing if we can create a blog post", function(t){
-  var newBlogPost = {
-    "title": "me",
-    "author": "me",
-    "date": "1",
-    "body": "memememe",
-    "comments": [],
-    "likes": 0
-  }
   t.plan(4)
 
-  db.createBlogPost(client, 7, newBlogPost, function(error, reply){
+  db.createBlogPost(client, 7, testBlogPost, function(error, reply){
     t.ok(! error, "assert no error")
     t.ok(reply, "assert post has been stored")
     client.HGETALL("posts", function(error, reply){
-      var expected = JSON.stringify(newBlogPost);
+      var expected = JSON.stringify(testBlogPost);
       t.ok(! error, "no error")
       t.equal(expected, reply[7], "checked that the new BlogPost has been stored!")
     })
@@ -44,23 +45,53 @@ test("testing if we can create a blog post", function(t){
 })
 
 test("test can edit blog post", function(t) {
-  var blogPost = {
-    "title": "me",
-    "author": "me",
-    "date": "20357",
-    "body": "foahew9hqor",
-    "comments": [],
-    "likes": 0
-  }
   var editedPostBody = "fnidubgqoniibcauhfq"
   t.plan(3)
-  db.createBlogPost(client, 7, blogPost, function(err, __) {
+  db.createBlogPost(client, 7, testBlogPost, function(err, __) {
     t.ok(! err, "no error")
 
     db.editBlogPost(client, 7, 'body', editedPostBody, function(_, __) {
       client.HGET('posts', 7, function(error, reply) {
         t.ok(! error, "no error")
         t.equal(JSON.parse(reply).body, editedPostBody, "Assert has been edited")
+      })
+    })
+  })
+})
+
+test("test can add comment", function(t){
+  var comment = {
+    "author": "tommdfsdf",
+    "date": "skdjbfskdjfb",
+    "body": "jhsd"
+  }
+  t.plan(3)
+  db.createBlogPost(client, 7, testBlogPost, function(err, __){
+    t.ok(! err, "no error")
+    db.addComment(client, 7, comment, function(error, reply){
+      t.ok(! error, "no error")
+      client.HGET("posts", 7, function(error, reply){
+        var result = JSON.parse(reply).comments[0]
+        var expected = comment
+        t.deepEqual(result, expected, "yesss added comment")
+      })
+    })
+  })
+})
+
+test("test can like post", function(t) {
+  t.plan(4)
+  db.createBlogPost(client, 7, testBlogPost, function(err, __) {
+    t.ok(!err, "no error")
+    db.likePost(client, 7, function(error, _) {
+      t.ok(! error, "no error")
+      client.HGET('posts', 7, function(error, reply) {
+        t.equal(JSON.parse(reply).likes, 1, "likes has gone up")
+        db.likePost(client, 7, function(__, _) {
+          client.HGET('posts', 7, function(error, reply) {
+            t.equal(JSON.parse(reply).likes, 2, "likes has gone up again")
+          })
+        })
       })
     })
   })
