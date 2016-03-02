@@ -22,7 +22,8 @@
   "scripts": {
     "test": "node tests/*",
     "nodemon": "nodemon ./lib/server.js",
-    "start": "node ./lib/server.js"
+    "start": "node ./lib/server.js",
+    "postinstall": "mkdir ./.git/hooks && cp ./hooks/precommit ./.git/hooks/"
   },
   "repository": {
     "type": "git",
