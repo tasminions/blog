@@ -1,25 +1,27 @@
 <!-- this is the index view -->
-
-    <div class="blogContainer">
-      <div class="empty">
-
-      </div>
-      <div class="blogPost">
-        <h1>Blog 1</h1>
-        <p>
-          blog blogdskjflkdjbflwbef
-          ewwekjfbkwejrfbkjwebrf
-          erkfbwkerjfbkwejbrfkwebrf
-        </p>
-
-      </div>
-      <div class="blogPost">
-          <h1>Blog 2</h1>
-          <p>
-            blog blogdskjflkdjbflwbef
-            ewwekjfbkwejrfbkjwebrf
-            erkfbwkerjfbkwejbrfkwebrf
-          </p>
-
-      </div>
-  </div>
+<div class="blogContainer">
+  {{#each posts as |post|}}
+    <article id="{{this.id}}" class="blogPost">
+      <h2>{{post.title}}</h2>
+      <h4>{{post.author}}, {{post.date}}</h4>
+      <p>{{post.body}}</p>
+      <div class="banana"> {{post.likes}} </div>
+      <button type="button" name="seecomments">See Comments</button>
+      <ul class="comments">
+        {{#each post.comments}}
+          <li>
+            <h4>{{this.author}}, {{this.date}}</h4>
+            <p>
+              {{this.body}}
+            </p>
+          </li>
+        {{/each}}
+      </ul>
+    </article>
+  {{else}}
+    <article class="blogPost">
+      <h1>No Content</h1>
+    </article>
+  {{/each}}
+</div>
+<script type="text/javascript" src="../public/js/script.home.js"></script>
