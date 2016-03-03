@@ -1,35 +1,8 @@
 <!-- this is the index view -->
-<div class="blogContainer">
-  {{#each posts as |post|}}
-    <article id="{{this.id}}" class="blogPost">
-      <h2>{{post.title}}</h2>
-      <h4>{{post.author}}, {{post.date}}</h4>
-      <p>{{post.body}}</p>
-      <div class="banana"> {{post.likes}} </div>
-      <button type="button" class="comments-btn">Comments</button>
-      <div class="comments-wrapper hide">
-        <form class="comment-form" action="/" method="post">
-          <input type="text" name="author" value="" placeholder="Comment author">
-          <input type="text" name="body" value="" placeholder="Comment here" required>
-          <input type="hidden" name="id" value="{{post.id}}">
-          <input type="submit" name="submit" value="Submit Comment">
-        </form>
-        <div class="comments {{post:id}}">
-          {{#each post.comments}}
-            <div>
-              <h4>{{this.author}}, {{this.date}}</h4>
-              <p>
-                {{this.body}}
-              </p>
-            </div>
-          {{/each}}
-        </div>
-      </div>
-    </article>
-  {{else}}
-    <article class="blogPost">
-      <h1>No Content</h1>
-    </article>
-  {{/each}}
+<div class="preamble">
+  <h1>Hey look at our Monkey blog!</h1>
 </div>
+<main class="blogContainer">
+  {{>blogposts}}
+</main>
 <script type="text/javascript" src="../public/js/script.home.js"></script>
