@@ -35,10 +35,29 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.profile {
+  background-color: #000;
+  padding: 1em 2em; }
+  .profile h3 {
+    text-transform: uppercase;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto; }
+  .profile p {
+    text-align: justify; }
+  .profile .profile-img {
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px; }
+
 body {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a0/Lofty_Mt.Lu_by_Shen_Zhou.jpg");
   background-repeat: repeat-y;
-  color: #2a1a44; }
+  color: #2a1a44;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 600; }
 
 .Tasminions {
   float: left;
