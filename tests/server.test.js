@@ -30,19 +30,19 @@ tape.module1( 'Testing "/" route', function(t){
   });
 });
 
-tape.module1( 'Testing "/login" route', function(t){
-  const loginOptions = {
-    method:'GET',
-    url:'/login'
-  };
-  server.inject( loginOptions, function(res){
-    t.plan(4);
-    t.equal( res.statusCode, 200,'login request results in a 200 status Code');
-    t.ok( res.result.indexOf('<!DOCTYPE html>') > -1 ,'"/login" route results in an html being sent back');
-    t.ok( res.result.indexOf('class="navbar"') > -1 ,'"/login" route fetches default html template (which has a navbar)');
-    t.ok( res.result.indexOf('<!-- this is the login view -->') > -1 ,'"/login" route sends back the login html view');
-  });
-});
+// tape.module1( 'Testing "/login" route', function(t){
+//   const loginOptions = {
+//     method:'GET',
+//     url:'/login'
+//   };
+//   server.inject( loginOptions, function(res){
+//     t.plan(4);
+//     t.equal( res.statusCode, 200,'login request results in a 200 status Code');
+//     t.ok( res.result.indexOf('<!DOCTYPE html>') > -1 ,'"/login" route results in an html being sent back');
+//     t.ok( res.result.indexOf('class="navbar"') > -1 ,'"/login" route fetches default html template (which has a navbar)');
+//     t.ok( res.result.indexOf('<!-- this is the login view -->') > -1 ,'"/login" route sends back the login html view');
+//   });
+// });
 
 tape.module1( 'Testing the serving of static files', function(t){
   const staticOptions = {
