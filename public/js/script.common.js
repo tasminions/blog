@@ -29,11 +29,11 @@ var Helpers = (function() {
       }, {})
     },
 
-    createComment: function (author, body, section){
+    createComment: function (author, date, body, section){
       var div = document.createElement('div')
       var h4 = document.createElement('h4')
       var p = document.createElement('p')
-      h4.innerHTML = author
+      h4.innerHTML = 'Comment by: ' + author + ', on: ' + date
       p.innerHTML = body
       div.appendChild(h4)
       div.appendChild(p)
