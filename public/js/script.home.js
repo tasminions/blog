@@ -1,58 +1,57 @@
-var likeBtns = document.getElementsByClassName('banana');
+function addListenerToNodeList(nodeList, eventType, callback) {
+  Array.prototype.forEach.call(nodeList, function(node) {
+    node.addEventListener(eventType, callback)
+  })
+}
 
-Array.prototype.forEach.call(likeBtns, function(btn) {
-  btn.addEventListener("click", function(e) {
-    var postId = e.target.parentNode.id;
+addListenerToNodeList(document.getElementsByClassName('banana'), 'click', function(e) {
+  var postId = e.target.parentNode.id;
 
-    var xhr = new XMLHttpRequest();
+  var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', '/like?id=' + postId)
-    xhr.send()
+  xhr.open('POST', '/like?id=' + postId)
+  xhr.send()
 
-    xhr.addEventListener('load', function(reply) {
-      if (JSON.parse(reply.target.response).success) {
-        var newLikes = parseInt(e.target.innerHTML);
-        newLikes++;
-        e.target.innerHTML = newLikes.toString();
-      }
-    })
+  xhr.addEventListener('load', function(reply) {
+    if (JSON.parse(reply.target.response).success) {
+      var newLikes = parseInt(e.target.innerHTML);
+      newLikes++;
+      e.target.innerHTML = newLikes.toString();
+    }
   })
 })
 
-var commentBtns = document.getElementsByClassName('comments-btn')
-
-// ul with class 'comments' should be hidden by default.
+// element with class 'comments' should be hidden by default.
 // The 'show' class should then override its properties
-Array.prototype.forEach.call(commentBtns, function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.target.nextSibling.classList.toggle('show')
-  })
+addListenerToNodeList(document.getElementsByClassName('comments-btn'), 'click', function(e) {
+  e.target.nextSibling.classList.toggle('show')
 })
 
-var commentForm = document.getElementsByClassName('comment-form')
-Array.prototype.forEach.call(commentForm, function(btn){
-  btn.addEventListener('submit', function(e){
-    e.preventDefault()
-    var author = e.target.childNodes[1].value
-    var id = e.target.childNodes[5].value
-    var body = e.target.childNodes[3].value
-    var url = '/comment?author='+ author+ "&body="+body+"&id="+id
-    var xhr = new XMLHttpRequest()
-    xhr.open('POST', url)
-    xhr.send()
+addListenerToNodeList(document.getElementsByClassName('comment-form'), 'submit', function(e) {
+  e.preventDefault()
+  var options = Array.prototype.reduce.call(e.target.children, function(acc, node) {
+    acc[node.name] = node.value
+    return acc;
+  }, {})
+  console.log(options);
+  var author = e.target.children[0].value
+  var id = e.target.children[2].value
+  var body = e.target.children[1].value
+  var url = '/comment?author='+ author+ "&body="+body+"&id="+id
+  var xhr = new XMLHttpRequest()
+  xhr.open('POST', url)
+  xhr.send()
 
-    xhr.addEventListener('load', function(reply){
-      if(JSON.parse(reply.target.response).success) {
-        var commentSection = e.target.nextSibling.nextSibling
-        createComment(author, body, commentSection)
-      }
-    })
+  xhr.addEventListener('load', function(reply){
+    if(JSON.parse(reply.target.response).success) {
+      var commentSection = e.target.nextSibling.nextSibling
+      createComment(author, body, commentSection)
+    }
   })
 })
 
 
 function createComment(author, body, section){
-
   var div = document.createElement('div')
   var h4 = document.createElement('h4')
   var p = document.createElement('p')
