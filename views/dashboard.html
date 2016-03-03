@@ -8,10 +8,24 @@
   </form>
 </div>
 <div class="myBlogPosts">
+  <table>
+    <th>
+      Title
+    </th>
+    <th>
+
+    </th>
     {{#each posts}}
-      <h2>{{this.title}}</h2>
-      <a href="/editPost?{{this.id}}"><button>EDIT</button></a>
+          <tr>
+            <td>
+              <h2>{{this.title}}</h2>
+            </td>
+            <td>
+              <a href="/editpost/{{this.id}}"><button>EDIT</button></a>
+            </td>
+          </tr>
     {{else}}
       <h2>No content</h2>
     {{/each}}
+    </table>
 </div>

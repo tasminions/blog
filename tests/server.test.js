@@ -113,7 +113,14 @@ tape.module1("Testing that clicking edit redirects to the editpost page", functi
 var newpostOptions = {
   method: 'POST',
   url: '/newpost',
-  payload: 'id=12903&title=firstblogpost&author=test&body="hjkfgjh"&comments=&likes=0'
+  payload: {
+    id: 12903,
+    title: 'firstblogpost',
+    author: 'testauthor',
+    body: "hjkfgjh",
+    comments: [],
+    likes: 0
+  }
 
 }
 
@@ -125,7 +132,7 @@ server.inject(newpostOptions, function(res) {
 
 var editpostOptions = {
   method: 'GET',
-  url: '/editpost?'
+  url: '/editpost/'
 }
 //
 // server.inject( editpostOptions, function(res){
