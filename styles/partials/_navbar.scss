@@ -1,4 +1,17 @@
 // http://img04.deviantart.net/3f98/i/2012/236/1/6/monkey_png_by_captainjackharkness-d5cbs1q.png
+// 
+// @media only screen and (min-width: 320px){
+//   .monkey2{
+//     margin-top: -26%;
+//   }
+//   .monkey3{
+//     margin-top: -55%;
+//     margin-right: -11%;
+//   }
+//
+// }
+
+
 .navbar{
   z-index: 999;
   background-image: url("http://img09.deviantart.net/06ac/i/2014/344/3/9/branch_png_precut_by_black_cat16_stock-d6mxs1m.png");
@@ -12,6 +25,7 @@
 }
 .Tasminions{
   float: left;
+  margin-top: 2em;
 }
 .label{
   color: white;
@@ -52,17 +66,17 @@ border-radius: 6px;
 .monkey3{
   background-image: url("http://orig10.deviantart.net/a2fa/f/2014/323/c/d/monkey_silhouette_by_metalporsiempre-d86yyc5.png");
     height: 42%;
-    width: 41%;
+    width: 38%;
     background-size: 100% 100%;
     float: right;
-    margin-top: -44%;
+    margin-top: -4%;
     margin-right: -9%;
     opacity: 0.9;
     z-index: -1;
     text-align: center;
     .hometag{
       width: 31%;
-      margin-top: 42%;
+      margin-top: 47%;
       margin-left: 21%;
       margin-right: 25%;
       padding: 2%;

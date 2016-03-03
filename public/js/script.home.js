@@ -22,10 +22,13 @@ Helpers.addListenerToNodeList(document.getElementsByClassName('comment-form'), '
   var options = Helpers.parseNodeListToObject(e.target.children)
   var url = (options) ? '/comment?' + Helpers.parseObjectToQueryString(options) : '/comment'
 
+  var date = new Date(Date.now())
+  var dateStr = date.toISOString().split('T')[0]
+
   Helpers.newXhr('POST', url, function(reply){
     if(JSON.parse(reply.target.response).success) {
       var commentSection = e.target.nextElementSibling
-      Helpers.createComment(options.author, options.body, commentSection)
+      Helpers.createComment(options.author, dateStr, options.body, commentSection)
     }
   })
 })
