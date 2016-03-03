@@ -35,34 +35,86 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.profile {
-  background-color: #000;
-  padding: 1em 2em; }
-  .profile h3 {
-    text-transform: uppercase;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto; }
-  .profile p {
-    text-align: justify; }
-  .profile .profile-img {
-    background-size: contain;
-    height: 100px;
-    width: 100px;
-    border-radius: 50px; }
-
-body {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a0/Lofty_Mt.Lu_by_Shen_Zhou.jpg");
-  background-repeat: repeat-y;
-  color: #2a1a44;
-  font-family: 'Raleway', sans-serif;
-  font-size: 16px;
-  font-weight: 600; }
-
 .Tasminions {
   float: left;
   font-size: 100px;
   margin-top: 10%; }
+
+.monkey4 {
+  background-image: url("http://www.clipartbest.com/cliparts/RcA/Aak/RcAAakBai.png");
+  height: 55%;
+  width: 32%;
+  background-size: 100% 100%;
+  float: left;
+  margin-top: 14%;
+  margin-left: -3%;
+  opacity: 0.9; }
+  .monkey4 .logintag {
+    width: 38%;
+    margin-top: 55%;
+    margin-left: 10%;
+    margin-right: 25%;
+    background-color: #e0d8b7;
+    text-align: center;
+    text-shadow: 2px 3px 3px black; }
+    .monkey4 .logintag h1 {
+      color: #2a1a44;
+      /* background-color: grey; */
+      /* margin-left: 15%; */
+      font-size: 2.2em;
+      font-family: "Raleway"; }
+
+.monkey3 {
+  background-image: url("http://orig10.deviantart.net/a2fa/f/2014/323/c/d/monkey_silhouette_by_metalporsiempre-d86yyc5.png");
+  height: 42%;
+  width: 41%;
+  background-size: 100% 100%;
+  float: right;
+  margin-top: -44%;
+  margin-right: -9%;
+  opacity: 0.9;
+  z-index: -1;
+  text-align: center; }
+  .monkey3 .hometag {
+    width: 31%;
+    margin-top: 42%;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: #e0d8b7;
+    text-align: center;
+    text-shadow: 2px 3px 3px black; }
+    .monkey3 .hometag h1 {
+      color: #2a1a44;
+      /* background-color: grey; */
+      /* margin-left: 15%; */
+      font-size: 2.2em;
+      font-family: "Raleway"; }
+
+.monkey2 {
+  background-image: url("http://www.clipartbest.com/cliparts/biy/oBr/biyoBrL6T.png");
+  width: 34%;
+  height: 66%;
+  margin-left: 34%;
+  background-size: 100% 100%;
+  margin-top: -20%;
+  opacity: 0.9;
+  float: right;
+  text-align: center; }
+  .monkey2 .abouttag {
+    width: 43%;
+    margin-top: 42%;
+    margin-left: 35%;
+    margin-right: 15%;
+    background-color: #e0d8b7;
+    text-align: center;
+    margin-top: 89%;
+    text-shadow: 2px 3px 3px black; }
+    .monkey2 .abouttag h1 {
+      color: #2a1a44;
+      /* background-color: grey; */
+      /* margin-left: 15%; */
+      font-size: 2.2em;
+      font-family: "Raleway"; }
 
 .block {
   display: block;
@@ -70,7 +122,8 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 120px;
   font-weight: 600;
-  color: #2a1a44; }
+  color: #2a1a44;
+  text-shadow: 3px 4px 4px white; }
 
 .T {
   margin-top: 159px; }
@@ -103,38 +156,6 @@ body {
   margin-top: -11%;
   background-repeat: no-repeat; }
 
-.content {
-  position: absolute;
-  top: 20vh;
-  width: 70%;
-  left: 15%; }
-
-.blogPost {
-  width: 80%;
-  border-radius: 2%;
-  background-color: rgba(196, 179, 135, 0.5);
-  font-size: 50px;
-  margin-left: 10%;
-  padding: 12px;
-  text-align: center;
-  font-family: 'Raleway', sans-serif;
-  margin-top: 10%; }
-
-.empty {
-  height: 450px; }
-
-.monkey {
-  background-image: url("https://pbs.twimg.com/profile_images/540064987150950400/ZbrWpZr7.png");
-  margin-top: 11%;
-  margin-left: 63%;
-  width: 19%;
-  height: 22%;
-  background-size: 127% 101%;
-  background-repeat: no-repeat;
-  padding-top: 9%;
-  padding-left: 21%;
-  opacity: 0.7; }
-
 .hamburger-menu {
   width: 88px;
   height: 13px;
@@ -155,6 +176,50 @@ body {
 
 .hamburger-menu:before {
   top: 42px; }
+
+.profile {
+  background-color: #000;
+  padding: 1em 2em; }
+  .profile h3 {
+    text-transform: uppercase;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto; }
+  .profile p {
+    text-align: justify; }
+  .profile .profile-img {
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px; }
+
+body {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a0/Lofty_Mt.Lu_by_Shen_Zhou.jpg");
+  background-repeat: repeat-y;
+  color: #2a1a44;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 600; }
+
+.content {
+  position: absolute;
+  top: 20vh;
+  width: 70%;
+  left: 15%; }
+
+.blogPost {
+  width: 80%;
+  border-radius: 2%;
+  background-color: rgba(196, 179, 135, 0.5);
+  font-size: 50px;
+  margin-left: 10%;
+  padding: 12px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 10%; }
+
+.empty {
+  height: 450px; }
 
 .hide {
   display: none; }
