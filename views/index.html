@@ -5,6 +5,7 @@
       <h2>{{post.title}}</h2>
       <h4>{{post.author}}, {{post.date}}</h4>
       <p>{{post.body}}</p>
+      <div class="banana"> {{post.likes}} </div>
       <button type="button" name="seecomments">See Comments</button>
       <ul class="comments">
         {{#each post.comments}}
@@ -23,3 +24,4 @@
     </article>
   {{/each}}
 </div>
+<script type="text/javascript" src="../public/js/script.home.js"></script>
