@@ -53,6 +53,7 @@ table {
   color: white;
   /* background-color: grey; */
   /* margin-left: 15%; */
+  text-decoration: none;
   font-size: 0.8em;
   font-family: "Raleway"; }
   .label a {
@@ -205,6 +206,9 @@ body {
   top: 20vh;
   width: 70%;
   left: 15%; }
+
+.userInfo {
+  background-image: url("http://img04.deviantart.net/3f98/i/2012/236/1/6/monkey_png_by_captainjackharkness-d5cbs1q.png"); }
 
 .blogPost {
   width: 80%;
