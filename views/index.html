@@ -6,17 +6,25 @@
       <h4>{{post.author}}, {{post.date}}</h4>
       <p>{{post.body}}</p>
       <div class="banana"> {{post.likes}} </div>
-      <button type="button" name="seecomments">See Comments</button>
-      <ul class="comments">
-        {{#each post.comments}}
-          <li>
-            <h4>{{this.author}}, {{this.date}}</h4>
-            <p>
-              {{this.body}}
-            </p>
-          </li>
-        {{/each}}
-      </ul>
+      <button type="button" class="comments-btn">Comments</button>
+      <div class="comments-wrapper hide">
+        <form class="comment-form" action="/" method="post">
+          <input type="text" name="author" value="" placeholder="Comment author">
+          <input type="text" name="body" value="" placeholder="Comment here" required>
+          <input type="hidden" name="id" value="{{post.id}}">
+          <input type="submit" name="submit" value="Submit Comment">
+        </form>
+        <div class="comments {{post:id}}">
+          {{#each post.comments}}
+            <div>
+              <h4>{{this.author}}, {{this.date}}</h4>
+              <p>
+                {{this.body}}
+              </p>
+            </div>
+          {{/each}}
+        </div>
+      </div>
     </article>
   {{else}}
     <article class="blogPost">
