@@ -199,7 +199,7 @@ table {
     font-size: 0.7em;
     text-align: justify;
     margin-bottom: 0.7em; }
-  .blogPost .banana {
+  .blogPost .likes-container {
     width: 50%;
     text-align: center;
     margin-left: auto;
@@ -207,6 +207,14 @@ table {
     margin-bottom: 2em;
     border-radius: 25px;
     font-size: 0.7em; }
+
+.comment-form {
+  margin: 1em auto; }
+  .comment-form input, .comment-form textarea {
+    margin: 0.2em 0;
+    width: 100%; }
+  .comment-form textarea {
+    resize: none; }
 
 .profile-container {
   margin-top: 20%; }
