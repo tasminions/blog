@@ -3,12 +3,12 @@
     <h2>{{post.title}}</h2>
     <h4>Posted by: {{post.author}}, on: {{post.date}}</h4>
     <p>{{post.body}}</p>
-    <div class="banana">Likes: {{post.likes}}</div>
+    <div class="likes-container"><span>Likes: </span><span class="likes">{{post.likes}}</span></div>
     <button type="button" class="comments-btn">Comments</button>
     <div class="comments-wrapper hide">
       <form class="comment-form" action="/" method="post">
         <input type="text" name="author" value="" placeholder="Comment author">
-        <input type="text" name="body" value="" placeholder="Comment here" required>
+        <textarea type="text" name="body" value="" placeholder="Comment here" fixed required></textarea>
         <input type="hidden" name="id" value="{{post.id}}">
         <input type="submit" name="submit" value="Submit Comment">
       </form>

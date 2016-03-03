@@ -1,7 +1,7 @@
 // On clicking the like button, the /like endpoint on the server stores the like in the DB,
 // and the new like total is also immediately added to the DOM // synchronicity issues!
-Helpers.addListenerToNodeList(document.getElementsByClassName('banana'), 'click', function(e) {
-  var postId = e.target.parentNode.id;
+Helpers.addListenerToNodeList(document.getElementsByClassName('likes'), 'click', function(e) {
+  var postId = e.target.parentNode.parentNode.id;
 
   Helpers.newXhr('POST', '/like?id=' + postId, function(reply) {
 
