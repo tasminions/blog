@@ -10,7 +10,7 @@
     <title>Monkey Blog</title>
   </head>
   <body>
-    <audio controls autoplay>
+    <audio class="hide" controls autoplay>
       <source src="../../public/sounds/background-noise.mp3" type="audio/mp3">
     </audio>
     <div class="navbar">
@@ -20,26 +20,27 @@
       </div>
       <div class="monkey3">
         <div class="hometag">
-          <h1>HOME</h1>
+          <h1 class="label">HOME</h1>
         </div>
 
       </div>
       <div class="monkey4">
         <div class="logintag">
 
-          <a href="/dashboard"><h1>LOGIN</h1></a>
+          <a href="/dashboard"><h1 class="label">LOGIN</h1></a>
 
         </div>
 
       </div>
       <div class="monkey2">
         <div class="abouttag">
-            <h1>ABOUT</h1>
+            <h1 class="label">ABOUT</h1>
         </div>
 
       </div>
       </div>
     <div class="content">
+      <div class="empty"></div>
       {{{content}}}
     </div>
   </body>

@@ -9,6 +9,7 @@
 body{
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a0/Lofty_Mt.Lu_by_Shen_Zhou.jpg");
   background-repeat: repeat-y;
+  background-size: 100%;
   color: rgb(42, 26, 68);
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
@@ -35,7 +36,7 @@ font-family: 'Raleway', sans-serif;
 margin-top: 10%;
 }
 .empty{
-  height: 450px;
+  margin-top: 10%;
 }
 
 
