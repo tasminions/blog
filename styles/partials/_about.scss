@@ -1,12 +1,20 @@
+.profile-container {
+  margin-top: 20%;
+  z-index: 0;
+}
+
 .profile {
-  background-color: #000;
-  padding: 1em 2em;
+  background-color: rgba(196, 179, 135, 0.7);
+  padding: 2em 2em;
+  border-radius: 2em;
+
+  .profile-title {
+    text-align: center;
+    margin: 1em 0;
+  }
 
   h3 {
     text-transform: uppercase;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   p {
@@ -17,6 +25,8 @@
     background-size: contain;
     height: 100px;
     width: 100px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 50px;
   }
 }
