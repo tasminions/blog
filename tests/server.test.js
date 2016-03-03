@@ -88,7 +88,6 @@ tape('/adduser route will create a new user in the database and redirect to "/"'
   server.inject( addUserOptions, function(res){
     db.getUser( testclient, 'gorilla', function(err,reply){
       t.ok(!err,'no error in retrieving user');
-      console.log('reply', reply);
       t.deepEqual( reply.filter( x=> x.username === newUserObj.username )[0], newUserObj, "user has been added so /newuser routing works")
     });
   });
@@ -109,7 +108,6 @@ tape( 'Testing /dashboard route with good params', function(t){
     url:'/dashboard',
     headers: { authorization: authGood }
   };
-
   t.plan(2);
   server.inject( authOptionsGood, function(res){
     t.equal( res.statusCode, 200,'about request with correct password results in a 200 status Code');
@@ -127,39 +125,12 @@ tape( 'Testing /dashboard route with bad params', function(t){
     url:'/dashboard',
     headers: { authorization: authBad }
   };
-
-  t.plan(2);
   server.inject( authOptionsBad, function(res){
+    t.plan(1);
     t.equal( res.statusCode, 401,'about request with incorrect password results in a 401 status Code');
-    t.ok( res.result.indexOf('<!-- this is the dashboard view -->') === -1, 'user has not authenticated correcly and has not been redirected to dashboard');
+    t.end();
   });
 });
-//
-//   const authBad = {username:'impostor',password:'blah'};
-//   const authOptionsBad = {
-//     method:'POST',
-//     url:'/auth',
-//     headers: authBad
-//   };
-//   server.inject( authOptionsBad, function(res){
-//     t.equal( res.statusCode, 401,'about request with wrong password results in a 404 status Code');
-//     t.notEqual( res.result, 'you are the admin', 'user has authenticated correcly (this test will need to be changed later on)!');
-//   });
-// });
-
-// tape( 'Testing /dashboard route', function(t){
-//   const dashboardOptions = {
-//     method:'GET',
-//     url:'/dashboard'
-//   };
-//   server.inject( dashboardOptions, function(res){
-//     t.plan(4);
-//     t.equal( res.statusCode, 200,'dashboard request results in a 200 status Code');
-//     t.ok( res.result.indexOf('<!DOCTYPE html>') > -1 ,'"/dashboard" route results in an html being sent back');
-//     t.ok( res.result.indexOf('class="navbar"') > -1 ,'"/dashboard" route fetches default html template (which has a navbar)');
-//     t.ok( res.result.indexOf('<!-- this is the dashboard view -->') > -1 ,'"/dashboard" route sends back the dashboard html view');
-//   });
-// });
 
 // tape("Testing that clicking edit redirects to the editpost page", function(t){
 //   var newpostOptions = {
