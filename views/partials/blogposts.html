@@ -1,9 +1,9 @@
 {{#each posts as |post|}}
   <article id="{{post.id}}" class="blogPost">
     <h2>{{post.title}}</h2>
-    <h4>{{post.author}}, {{post.date}}</h4>
+    <h4>Posted by: {{post.author}}, on: {{post.date}}</h4>
     <p>{{post.body}}</p>
-    <div class="banana"> {{post.likes}} </div>
+    <div class="banana">Likes: {{post.likes}}</div>
     <button type="button" class="comments-btn">Comments</button>
     <div class="comments-wrapper hide">
       <form class="comment-form" action="/" method="post">
