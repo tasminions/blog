@@ -134,3 +134,29 @@ test("can retrieve userObj", function(t){
     })
   })
 })
+
+var monkeyPost = {
+  "id": 908,
+  "title": "monkey post",
+  "author": "monkey",
+  "date": "12051990",
+  "body": "this is a blog post by a monkey",
+  "comments": [],
+  "likes": 0
+}
+
+test('test that a user can edit an existing post', function(t){
+  t.plan(3);
+  db.createBlogPost(client, 908, monkeyPost, function(err, __) {
+    t.ok(!err, "no errors");
+
+  })
+
+  db.getSinglePost(client, 908, function(err, reply) {
+    t.ok(!err, "no errors in singlepost method");
+    console.log(err);
+    console.log(monkeyPost);
+    console.log(reply);
+    t.deepEqual(reply, monkeyPost, "individual post retrieved from db for editting")
+  })
+})
