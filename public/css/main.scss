@@ -60,6 +60,14 @@ body{
   margin-top: -11%;
   background-repeat: no-repeat;
 }
+
+.content {
+  position: absolute;
+  top: 20vh;
+  width: 70%;
+  left: 15%;
+}
+
 .blogPost{
   width: 80%;
   border-radius: 2%;
@@ -115,4 +123,8 @@ position: relative;
 .hamburger-menu:before
 {
     top:42px;
+}
+
+.hide {
+  display: none;
 }
