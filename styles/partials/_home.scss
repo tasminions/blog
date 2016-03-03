@@ -3,6 +3,9 @@
 }
 
 .blogPost {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   background-color: rgba(196, 179, 135, 0.7);
   padding: 2em 2em;
   border-radius: 2em;
@@ -10,27 +13,41 @@
 
   h2 {
     text-transform: uppercase;
-    font-size: 0.4em;
-    margin-bottom: 0.2em;
+    font-size: 1em;
+    margin-bottom: 0.7em;
   }
 
   h4 {
-    font-size: 0.3em;
-    margin-bottom: 0.2em;
+    font-size: 0.8em;
+    margin-bottom: 0.7em;
   }
 
   p {
-    font-size: 0.2em;
+    font-size: 0.7em;
     text-align: justify;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.7em;
   }
 
-  .banana {
-    height: 50px;
-    width: 50px;
+  .likes-container {
+    width: 50%;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2em;
     border-radius: 25px;
-    font-size: 0.3em;
+    font-size: 0.7em;
+  }
+}
+
+.comment-form {
+  margin: 1em auto;
+
+  input, textarea {
+    margin: 0.2em 0;
+    width: 100%;
+  }
+
+  textarea {
+    resize: none;
   }
 }
