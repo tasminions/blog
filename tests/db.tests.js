@@ -130,7 +130,7 @@ test("can retrieve userObj", function(t){
   db.addUser(client, userObj.username, userObj, function(error, reply) {
     t.ok(! error, "no error")
     db.getUser(client, 'dave', function(error, reply) {
-      t.deepEqual(JSON.parse(reply), userObj, "user has been added")
+      t.deepEqual(reply[0], userObj, "user has been added")
     })
   })
 })
@@ -154,9 +154,6 @@ test('test that a user can edit an existing post', function(t){
 
   db.getSinglePost(client, 908, function(err, reply) {
     t.ok(!err, "no errors in singlepost method");
-    console.log(err);
-    console.log(monkeyPost);
-    console.log(reply);
     t.deepEqual(reply, monkeyPost, "individual post retrieved from db for editting")
   })
 })

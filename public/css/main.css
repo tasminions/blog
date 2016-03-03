@@ -1,3 +1,40 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 .Tasminions {
   float: left;
   font-size: 100px;
@@ -140,10 +177,29 @@
 .hamburger-menu:before {
   top: 42px; }
 
+.profile {
+  background-color: #000;
+  padding: 1em 2em; }
+  .profile h3 {
+    text-transform: uppercase;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto; }
+  .profile p {
+    text-align: justify; }
+  .profile .profile-img {
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px; }
+
 body {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a0/Lofty_Mt.Lu_by_Shen_Zhou.jpg");
   background-repeat: repeat-y;
-  color: #2a1a44; }
+  color: #2a1a44;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 600; }
 
 .content {
   position: absolute;

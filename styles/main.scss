@@ -1,12 +1,18 @@
+@import "modules/reset";
 @import "modules/colours";
 @import "modules/fonts";
 @import "partials/navbar";
+@import "partials/home";
+@import "partials/about";
 
 
 body{
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a0/Lofty_Mt.Lu_by_Shen_Zhou.jpg");
   background-repeat: repeat-y;
   color: rgb(42, 26, 68);
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
 }
 //img09.deviantart.net/06ac/i/2014/344/3/9/branch_png_precut_by_black_cat16_stock-d6mxs1m.png
 
