@@ -2,8 +2,8 @@
 <div class="profile-container">
   {{#each users}}
     <div class="profile">
-      <img src="{{this.image}}"/>
-      <h1>{{this.username}}</h1>
+      <div class="profile-img" style="background-image: url({{this.image}});"></div>
+      <h3>{{this.username}}</h3>
       <p>{{this.spiel}}</p>
     </div>
   {{else}}

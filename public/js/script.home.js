@@ -1,64 +1,36 @@
-var likeBtns = document.getElementsByClassName('banana');
+// On clicking the like button, the /like endpoint on the server stores the like in the DB,
+// and the new like total is also immediately added to the DOM // synchronicity issues!
+Helpers.addListenerToNodeList(document.getElementsByClassName('banana'), 'click', function(e) {
+  var postId = e.target.parentNode.id;
 
-Array.prototype.forEach.call(likeBtns, function(btn) {
-  btn.addEventListener("click", function(e) {
-    var postId = e.target.parentNode.id;
+  Helpers.newXhr('POST', '/like?id=' + postId, function(reply) {
 
-    var xhr = new XMLHttpRequest();
+    if (JSON.parse(reply.target.response).success) {
+      var newLikes = parseInt(e.target.innerHTML);
+      newLikes++;
+      e.target.innerHTML = newLikes.toString();
+    }
 
-    xhr.open('POST', '/like?id=' + postId)
-    xhr.send()
-
-    xhr.addEventListener('load', function(reply) {
-      if (JSON.parse(reply.target.response).success) {
-        var newLikes = parseInt(e.target.innerHTML);
-        newLikes++;
-        e.target.innerHTML = newLikes.toString();
-      }
-    })
   })
 })
 
-var commentBtns = document.getElementsByClassName('comments-btn')
+// On comment form submission, the /comment endpoint on the server stores the comment in the DB,
+// and the new comment is also immediately added to the DOM // synchronicity issues!
+Helpers.addListenerToNodeList(document.getElementsByClassName('comment-form'), 'submit', function(e) {
+  e.preventDefault()
 
-// ul with class 'comments' should be hidden by default.
-// The 'show' class should then override its properties
-Array.prototype.forEach.call(commentBtns, function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.target.nextSibling.classList.toggle('show')
+  var options = Helpers.parseNodeListToObject(e.target.children)
+  var url = (options) ? '/comment?' + Helpers.parseObjectToQueryString(options) : '/comment'
+
+  Helpers.newXhr('POST', url, function(reply){
+    if(JSON.parse(reply.target.response).success) {
+      var commentSection = e.target.nextElementSibling
+      Helpers.createComment(options.author, options.body, commentSection)
+    }
   })
 })
 
-var commentForm = document.getElementsByClassName('comment-form')
-Array.prototype.forEach.call(commentForm, function(btn){
-  btn.addEventListener('submit', function(e){
-    e.preventDefault()
-    var author = e.target.childNodes[1].value
-    var id = e.target.childNodes[5].value
-    var body = e.target.childNodes[3].value
-    var url = '/comment?author='+ author+ "&body="+body+"&id="+id
-    var xhr = new XMLHttpRequest()
-    xhr.open('POST', url)
-    xhr.send()
-
-    xhr.addEventListener('load', function(reply){
-      if(JSON.parse(reply.target.response).success) {
-        var commentSection = e.target.nextSibling.nextSibling
-        createComment(author, body, commentSection)
-      }
-    })
-  })
+// Element with class 'comments' should be hidden by default.
+Helpers.addListenerToNodeList(document.getElementsByClassName('comments-btn'), 'click', function(e) {
+  e.target.nextElementSibling.classList.toggle('hide')
 })
-
-
-function createComment(author, body, section){
-
-  var div = document.createElement('div')
-  var h4 = document.createElement('h4')
-  var p = document.createElement('p')
-  h4.innerHTML = author
-  p.innerHTML = body
-  div.appendChild(h4)
-  div.appendChild(p)
-  section.appendChild(div)
-}
