@@ -1,6 +1,6 @@
+<!-- this is the editpost view -->
 <h1>Edit post {{this.id}}</h1>
-
-<form class="" action="/savepost" method="post">
+<form class="" action="/savepost/{{this.id}}" method="post">
   <input class="hide" name="id" value={{this.id}}>
   <textarea name="title">{{this.title}}</textarea>
   <textarea name="body">{{this.body}}</textarea>
