@@ -1,10 +1,42 @@
 // http://img04.deviantart.net/3f98/i/2012/236/1/6/monkey_png_by_captainjackharkness-d5cbs1q.png
+// 
+// @media only screen and (min-width: 320px){
+//   .monkey2{
+//     margin-top: -26%;
+//   }
+//   .monkey3{
+//     margin-top: -55%;
+//     margin-right: -11%;
+//   }
+//
+// }
 
+
+.navbar{
+  z-index: 999;
+  background-image: url("http://img09.deviantart.net/06ac/i/2014/344/3/9/branch_png_precut_by_black_cat16_stock-d6mxs1m.png");
+    width: 100%;
+    height: 52%;
+    position: fixed;
+    background-size: 120% 68%;
+    margin-left: 0%;
+    margin-top: -6%;
+    background-repeat: no-repeat;
+}
 .Tasminions{
   float: left;
-  font-size: 100px;
-  margin-top: 10%
-
+  margin-top: 2em;
+}
+.label{
+  color: white;
+/* background-color: grey; */
+/* margin-left: 15%; */
+text-decoration: none;
+font-size: 0.8em;
+font-family: "Raleway";
+a{
+  text-decoration: none;
+}
 }
 .monkey4{
   background-image: url("http://www.clipartbest.com/cliparts/RcA/Aak/RcAAakBai.png");
@@ -15,6 +47,7 @@
       margin-top: 14%;
       margin-left: -3%;
       opacity: 0.9;
+
       .logintag{
         width: 38%;
 margin-top: 55%;
@@ -22,43 +55,35 @@ margin-left: 10%;
 margin-right: 25%;
 background-color: #e0d8b7;
 text-align: center;
-text-shadow: 2px 3px 3px black;
-      h1{
-        color: #2a1a44;
-      /* background-color: grey; */
-      /* margin-left: 15%; */
-      font-size: 2.2em;
-      font-family: "Raleway"
-      }
+text-decoration: none;
+padding: 2%;
+background-color: #544e38;
+box-shadow: 1px 0px 4px white;
+border-radius: 6px;
+
     }
 }
 .monkey3{
   background-image: url("http://orig10.deviantart.net/a2fa/f/2014/323/c/d/monkey_silhouette_by_metalporsiempre-d86yyc5.png");
     height: 42%;
-    width: 41%;
+    width: 38%;
     background-size: 100% 100%;
     float: right;
-    margin-top: -44%;
+    margin-top: -4%;
     margin-right: -9%;
     opacity: 0.9;
     z-index: -1;
     text-align: center;
     .hometag{
       width: 31%;
-    margin-top: 42%;
-    margin-left: 25%;
-    margin-right: 25%;
-    background-color: #e0d8b7;
-    text-align: center;
-    text-shadow: 2px 3px 3px black;
-
-    h1{
-      color: #2a1a44;
-/* background-color: grey; */
-/* margin-left: 15%; */
-font-size: 2.2em;
-font-family: "Raleway"
-    }
+      margin-top: 47%;
+      margin-left: 21%;
+      margin-right: 25%;
+      padding: 2%;
+      background-color: #544e38;
+      box-shadow: 1px 0px 4px white;
+      border-radius: 6px;
+      text-align: center
 
     }
 }
@@ -77,19 +102,13 @@ font-family: "Raleway"
       margin-top: 42%;
       margin-left: 35%;
       margin-right: 15%;
-      background-color: #e0d8b7;
+
       text-align: center;
       margin-top: 89%;
-      text-shadow: 2px 3px 3px black;
-
-      h1{
-        color: #2a1a44;
-    /* background-color: grey; */
-    /* margin-left: 15%; */
-    font-size: 2.2em;
-    font-family: "Raleway"
-
-      }
+      padding: 2%;
+      background-color: #544e38;
+      box-shadow: 1px 0px 4px white;
+      border-radius: 6px;
 
     }
 }
@@ -98,50 +117,36 @@ font-family: "Raleway"
   display: block;
   float: left;
   font-family: 'Raleway', sans-serif;
-  font-size: 120px;
+  font-size: 2.5em;
   font-weight: 600;
   color: rgb(42, 26, 68);
-  text-shadow: 3px 4px 4px white;
-}
+  text-shadow: 3px 4px 9px white;}
 .T{
-  margin-top: 159px;
+  margin-top: 36%;
 }
 .a{
-  margin-top: 135px;
+  margin-top: 26%;
 
 }
 .s{
-  margin-top: 75px;
+  margin-top: 21%;
 
 }
 .m{
-  margin-top: 96px;
+  margin-top: 24%;
 
 }
 .i{
-  margin-top: 65px;
+  margin-top: 18%;
 
 }
 .o{
-  margin-top: 67px;
+  margin-top: 17%;
 
 }
 .n{
-  margin-top: 58px;
+  margin-top: 21%;
 
-}
-
-
-.navbar{
-  // background-image: url("http://www.acacia225.eu/images/Acaciam01L.png");
-  background-image: url("http://img09.deviantart.net/06ac/i/2014/344/3/9/branch_png_precut_by_black_cat16_stock-d6mxs1m.png");
-  width: 101%;
-  height: 48%;
-  position: fixed;
-  background-size: 105% 69%;
-  margin-left: 0%;
-  margin-top: -11%;
-  background-repeat: no-repeat;
 }
 
 // .monkey{
