@@ -1,1 +1,10 @@
 <!-- this is the about view -->
+{{#each users}}
+  <div class="profile">
+    <img src="{{this.image}}"/>
+    <h1>{{this.username}}</h1>
+    <p>{{this.spiel}}</p>
+  </div>
+{{else}}
+  <h1> noone is here....</h1>
+{{/each}}
