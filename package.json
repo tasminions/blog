@@ -20,12 +20,14 @@
     "vision": "^4.0.1"
   },
   "devDependencies": {
+    "istanbul": "^0.4.2",
     "wrapping-tape": "0.0.3"
   },
   "scripts": {
     "test": "tape ./tests/runner.js",
     "nodemon": "nodemon ./lib/server.js",
-    "start": "node ./lib/server.js"
+    "start": "node ./lib/server.js",
+    "coverage": "node ./node_modules/.bin/istanbul cover tape ./tests/runner.js" 
   },
   "repository": {
     "type": "git",
