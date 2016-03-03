@@ -28,7 +28,7 @@
     margin-bottom: 0.7em;
   }
 
-  .banana {
+  .likes-container {
     width: 50%;
     text-align: center;
     margin-left: auto;
@@ -36,5 +36,18 @@
     margin-bottom: 2em;
     border-radius: 25px;
     font-size: 0.7em;
+  }
+}
+
+.comment-form {
+  margin: 1em auto;
+
+  input, textarea {
+    margin: 0.2em 0;
+    width: 100%;
+  }
+
+  textarea {
+    resize: none;
   }
 }
