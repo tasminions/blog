@@ -25,7 +25,7 @@ ratings:
   - "**.rb"
 exclude_paths:
   - tests/
-  - public/js/socket.js
+  - public/js/
 ecmaFeatures:
   modules: true
   jsx: true
