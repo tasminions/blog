@@ -5,6 +5,24 @@
 @import "partials/home";
 @import "partials/about";
 
+button, input[type="submit"]{
+  color: white;
+    /* background-color: grey; */
+    /* margin-left: 15%; */
+    text-decoration: none;
+    font-size: 0.8em;
+    font-family: "Raleway";
+    padding: 2%;
+    background-color: #544e38;
+    box-shadow: 1px 0px 4px white;
+    border-radius: 6px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.editpost{
+  margin-top: 60%;
+}
 
 body{
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a0/Lofty_Mt.Lu_by_Shen_Zhou.jpg");

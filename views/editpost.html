@@ -1,4 +1,5 @@
 <!-- this is the editpost view -->
+<div class="profile editpost">
 <h1>Edit post {{this.id}}</h1>
 <form class="" action="/savepost/{{this.id}}" method="post">
   <input class="hide" name="id" value={{this.id}}>
@@ -6,3 +7,4 @@
   <textarea name="body">{{this.body}}</textarea>
   <input type="Submit" value="SAVE">
 </form>
+</div>
