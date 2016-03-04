@@ -20,6 +20,8 @@
     "vision": "^4.0.1"
   },
   "devDependencies": {
+    "codeclimate-test-reporter": "^0.3.1",
+    "codecov": "^1.0.1",
     "istanbul": "^0.4.2",
     "wrapping-tape": "0.0.3"
   },
@@ -27,7 +29,7 @@
     "test": "tape ./tests/runner.js",
     "nodemon": "nodemon ./lib/server.js",
     "start": "node ./lib/server.js",
-    "coverage": "node ./node_modules/.bin/istanbul cover tape ./tests/runner.js" 
+    "coverage": "node ./node_modules/.bin/istanbul cover tape ./tests/runner.js"
   },
   "repository": {
     "type": "git",
