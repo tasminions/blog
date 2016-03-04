@@ -77,12 +77,6 @@ function getDashboard(server, callback){
   server.inject( dashboardOptions, callback );
 }
 
-// initialize redis client
-var testclient    = redis.createClient(process.env.REDIS_URL);;
-testclient.select( process.env.REDIS_DB || 0, function() {
-  console.log('Connected to redis DB');
-});
-
 tape = tape({
   // at the beginning of each test suite...
   startup: function(t){
@@ -94,9 +88,7 @@ tape = tape({
   },
   // at the end of each test suite...
   teardown: function(t){
-    testclient.flushdb();
     t.end();
-
     server.stop();
   }
 });
@@ -143,18 +135,6 @@ tape( 'Testing the serving of static files', function(t){
 // });
 //
 
-tape('/adduser route will create a new user in the database and redirect to "/"',function(t){
-  t.plan(2);
-
-  newUser(server, 'gorilla', function(newUserObj){
-    db.getUser( testclient, 'gorilla', function(err,reply){
-      t.ok(!err,'no error in retrieving user');
-      t.ok( reply.filter( x=> x.username === 'gorilla' )[0], "user has been added so /newuser routing works")
-    });
-  });
-
-});
-
 tape( 'Testing /dashboard route with good params', function(t){
   authenticate(server, 'gorilla', 'good', function(res){
     t.plan(2);
@@ -164,9 +144,9 @@ tape( 'Testing /dashboard route with good params', function(t){
 });
 
 tape( 'Testing /dashboard route with bad params', function(t){
+  t.plan(1);
   // db has been flushed so new user needs to be added
   authenticate(server, 'chimp', 'bad', function(res){
-    t.plan(1);
     t.equal( res.statusCode, 401,'/dashboard request with incorrect password results in a 401 status Code');
   });
 });
