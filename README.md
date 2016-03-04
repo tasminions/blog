@@ -1,4 +1,4 @@
-[![Travis](https://img.shields.io/travis/tasminions/blog.svg)](https://travis-ci.org/tasminions/blog/)
+[![Travis](https://img.shields.io/travis/tasminions/blog.svg)](https://travis-ci.org/tasminions/blog.svg?branch=master)
 [![Code Climate](https://codeclimate.com/github/tasminions/blog/badges/gpa.svg)](https://codeclimate.com/github/tasminions/blog)
 [![Issue Count](https://codeclimate.com/github/tasminions/blog/badges/issue_count.svg)](https://codeclimate.com/github/tasminions/blog)
 [![Test Coverage](https://codeclimate.com/github/tasminions/blog/badges/coverage.svg)](https://codeclimate.com/github/tasminions/blog/coverage)
