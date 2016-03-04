@@ -46,15 +46,17 @@ test("testing if we can create a blog post", function(t){
 })
 
 test("test can edit blog post", function(t) {
-  var editedPostBody = "fnidubgqoniibcauhfq"
+  var editedPost = testBlogPost;
+  editedPost.body = "fnidubgqoniibcauhfq";
+
   t.plan(3)
   db.createBlogPost(client, 7, testBlogPost, function(err, __) {
     t.ok(! err, "no error")
 
-    db.editBlogPost(client, 7, 'body', editedPostBody, function(_, __) {
+    db.editBlogPost(client, 7, editedPost, function(_, __) {
       client.HGET('posts', 7, function(error, reply) {
         t.ok(! error, "no error")
-        t.equal(JSON.parse(reply).body, editedPostBody, "Assert has been edited")
+        t.deepEqual(JSON.parse(reply), editedPost, "Assert has been edited")
       })
     })
   })
