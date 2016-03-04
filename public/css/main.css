@@ -37,14 +37,21 @@ table {
 
 .navbar {
   z-index: 999;
-  background-image: url("http://img09.deviantart.net/06ac/i/2014/344/3/9/branch_png_precut_by_black_cat16_stock-d6mxs1m.png");
+  background-image: url("../../public/img/g4783.png");
   width: 100%;
   height: 52%;
   position: fixed;
-  background-size: 120% 68%;
+  background-size: 120% 100%;
   margin-left: 0%;
   margin-top: -6%;
   background-repeat: no-repeat; }
+  @media (min-width: 1200px) {
+    .navbar {
+      width: 57%;
+      height: 67%;
+      background-size: 100% 100%;
+      margin-left: 0%;
+      margin-top: -4%; } }
 
 .Tasminions {
   float: left;
@@ -60,71 +67,58 @@ table {
   .label a {
     text-decoration: none; }
 
-.monkey4 {
-  background-image: url("http://www.clipartbest.com/cliparts/RcA/Aak/RcAAakBai.png");
-  height: 55%;
-  width: 32%;
-  background-size: 100% 100%;
-  float: left;
-  margin-top: 14%;
-  margin-left: -3%;
-  opacity: 0.9; }
-  .monkey4 .logintag {
-    width: 38%;
-    margin-top: 55%;
-    margin-left: 10%;
-    margin-right: 25%;
-    background-color: #e0d8b7;
-    text-align: center;
-    text-decoration: none;
-    padding: 2%;
-    background-color: #544e38;
-    box-shadow: 1px 0px 4px white;
-    border-radius: 6px; }
+.logintag {
+  width: 10%;
+  margin-top: 69%;
+  margin-left: 5%;
+  margin-right: 25%;
+  background-color: #e0d8b7;
+  text-align: center;
+  text-decoration: none;
+  padding: 1%;
+  background-color: #544e38;
+  box-shadow: 1px 0px 4px white;
+  border-radius: 6px; }
+  @media (min-width: 1200px) {
+    .logintag {
+      margin-top: 53%;
+      margin-left: 5%;
+      margin-right: 25%; } }
 
-.monkey3 {
-  background-image: url("http://orig10.deviantart.net/a2fa/f/2014/323/c/d/monkey_silhouette_by_metalporsiempre-d86yyc5.png");
-  height: 42%;
-  width: 38%;
-  background-size: 100% 100%;
-  float: right;
-  margin-top: -4%;
-  margin-right: -9%;
-  opacity: 0.9;
-  z-index: -1;
-  text-align: center; }
-  .monkey3 .hometag {
-    width: 31%;
-    margin-top: 47%;
-    margin-left: 21%;
-    margin-right: 25%;
-    padding: 2%;
-    background-color: #544e38;
-    box-shadow: 1px 0px 4px white;
-    border-radius: 6px;
-    text-align: center; }
+.hometag {
+  width: 10%;
+  margin-top: 18%;
+  margin-right: 3%;
+  /* margin-right: 25%; */
+  padding: 1%;
+  background-color: #544e38;
+  box-shadow: 1px 0px 4px white;
+  border-radius: 6px;
+  text-align: center;
+  float: right; }
+  @media (min-width: 1200px) {
+    .hometag {
+      width: 10%;
+      margin-top: 16%;
+      margin-right: 18%; } }
 
-.monkey2 {
-  background-image: url("http://www.clipartbest.com/cliparts/biy/oBr/biyoBrL6T.png");
-  width: 34%;
-  height: 66%;
-  margin-left: 34%;
-  background-size: 100% 100%;
-  margin-top: -20%;
-  opacity: 0.9;
+.abouttag {
+  width: 10%;
+  margin-top: 57%;
+  /* margin-left: 35%; */
+  margin-right: -11%;
+  text-align: center;
   float: right;
-  text-align: center; }
-  .monkey2 .abouttag {
-    width: 43%;
-    margin-top: 42%;
-    margin-left: 35%;
-    margin-right: 15%;
-    text-align: center;
-    margin-top: 89%;
-    padding: 2%;
-    background-color: #544e38;
-    box-shadow: 1px 0px 4px white;
-    border-radius: 6px; }
+  padding: 1%;
+  background-color: #544e38;
+  box-shadow: 1px 0px 4px white;
+  border-radius: 6px; }
+  @media (min-width: 1200px) {
+    .abouttag {
+      width: 10%;
+      margin-top: 46%;
+      /* margin-left: 35%; */
+      margin-right: -11%; } }
 
 .block {
   display: block;
@@ -134,6 +128,9 @@ table {
   font-weight: 600;
   color: #2a1a44;
   text-shadow: 3px 4px 9px white; }
+  @media (min-width: 1200px) {
+    .block {
+      font-size: 5em; } }
 
 .T {
   margin-top: 36%; }
@@ -238,6 +235,23 @@ table {
     margin-left: auto;
     margin-right: auto;
     border-radius: 50px; }
+
+button, input[type="submit"] {
+  color: white;
+  /* background-color: grey; */
+  /* margin-left: 15%; */
+  text-decoration: none;
+  font-size: 0.8em;
+  font-family: "Raleway";
+  padding: 2%;
+  background-color: #544e38;
+  box-shadow: 1px 0px 4px white;
+  border-radius: 6px;
+  text-transform: uppercase;
+  opacity: 0.9; }
+
+.editpost {
+  margin-top: 60%; }
 
 body {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a0/Lofty_Mt.Lu_by_Shen_Zhou.jpg");
