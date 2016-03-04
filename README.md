@@ -19,7 +19,7 @@ saving created/edited posts on a database.
 ![user-story](public/img/user-story.jpg)
 
 ![folder-structure](public/img/folder-structure.jpg)
-
+ 
 ![routes](public/img/routes.jpg)
 
 ![homepage](public/img/homepage.jpg)
