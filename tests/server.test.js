@@ -32,7 +32,7 @@ function newUser(server, username, callback) {
   const newUserObj = {
     "username": username,
     "image": 'http://fillmurray.com/200/200', isAdmin: false,
-    "secret": "$2a$04$uOkR8kWenZ/CZKp5Lgw6Sue8gFOCMMqfUFwEMmFdxhoyTuhanxXMa", // "password" with bcrypt
+    "secret": process.env.PASSWORD,
     "email": "gorilla@apes.primate",
     "spiel": 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   };
