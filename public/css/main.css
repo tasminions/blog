@@ -47,15 +47,18 @@ table {
   background-repeat: no-repeat; }
   @media (min-width: 1200px) {
     .navbar {
-      width: 57%;
-      height: 67%;
+      width: 36em;
+      height: 26em;
       background-size: 100% 100%;
       margin-left: 0%;
-      margin-top: -4%; } }
+      margin-top: -2.5em; } }
 
 .Tasminions {
   float: left;
   margin-top: 2em; }
+  @media (min-width: 1200px) {
+    .Tasminions {
+      margin-top: 0em; } }
 
 .label {
   color: white;
@@ -81,7 +84,7 @@ table {
   border-radius: 6px; }
   @media (min-width: 1200px) {
     .logintag {
-      margin-top: 53%;
+      margin-top: 20em;
       margin-left: 5%;
       margin-right: 25%; } }
 
@@ -99,7 +102,7 @@ table {
   @media (min-width: 1200px) {
     .hometag {
       width: 10%;
-      margin-top: 16%;
+      margin-top: 6em;
       margin-right: 18%; } }
 
 .abouttag {
@@ -116,7 +119,7 @@ table {
   @media (min-width: 1200px) {
     .abouttag {
       width: 10%;
-      margin-top: 46%;
+      margin-top: 16em;
       /* margin-left: 35%; */
       margin-right: -11%; } }
 
@@ -130,7 +133,7 @@ table {
   text-shadow: 3px 4px 9px white; }
   @media (min-width: 1200px) {
     .block {
-      font-size: 5em; } }
+      font-size: 4em; } }
 
 .T {
   margin-top: 36%; }
@@ -153,35 +156,16 @@ table {
 .n {
   margin-top: 21%; }
 
-.hamburger-menu {
-  width: 88px;
-  height: 13px;
-  background-color: white;
-  border-radius: 5px;
-  position: relative; }
-
-.hamburger-menu:after, .hamburger-menu:before {
-  content: '';
-  width: 100%;
-  height: 13px;
-  background-color: white;
-  position: absolute;
-  border-radius: 5px; }
-
-.hamburger-menu:after {
-  top: 21px; }
-
-.hamburger-menu:before {
-  top: 42px; }
-
-.blogContainer {
-  margin-top: 20%; }
+.preamble {
+  text-align: center; }
+  .preamble img {
+    width: 70%; }
 
 .blogPost {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(196, 179, 135, 0.7);
+  background-color: rgba(196, 179, 135, 0.8);
   padding: 2em 2em;
   border-radius: 2em;
   margin-bottom: 2em; }
@@ -217,7 +201,7 @@ table {
   margin-top: 20%; }
 
 .profile {
-  background-color: rgba(196, 179, 135, 0.7);
+  background-color: rgba(196, 179, 135, 0.8);
   padding: 2em 2em;
   border-radius: 2em;
   margin-bottom: 2em; }
@@ -276,23 +260,40 @@ body {
   text-decoration: none;
   font-size: 0.8em;
   font-family: "Raleway";
-  padding: 2%;
+  padding: 1%;
   background-color: #544e38;
   box-shadow: 1px 0px 4px white;
   border-radius: 6px;
   width: 40%;
   margin-left: 30%;
-  margin-top: 70%; }
+  margin-top: 11%; }
+  @media (min-width: 1200px) {
+    .namelabel {
+      width: 12%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0; } }
+
+table {
+  margin-left: auto;
+  margin-right: auto; }
+
+.writePost {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  display: block; }
 
 .userInfo {
   background-image: url("http://img04.deviantart.net/3f98/i/2012/236/1/6/monkey_png_by_captainjackharkness-d5cbs1q.png");
-  background-size: cover;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
   background-position: center;
   height: 12em;
   text-align: center; }
 
 .empty {
-  margin-top: 10%; }
+  margin-top: 15%; }
 
 .hide {
   display: none; }
