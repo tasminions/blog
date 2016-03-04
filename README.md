@@ -1,3 +1,7 @@
+[![Code Climate](https://codeclimate.com/github/tasminions/blog/badges/gpa.svg)](https://codeclimate.com/github/tasminions/blog)
+[![Issue Count](https://codeclimate.com/github/tasminions/blog/badges/issue_count.svg)](https://codeclimate.com/github/tasminions/blog)
+[![Test Coverage](https://codeclimate.com/github/tasminions/blog/badges/coverage.svg)](https://codeclimate.com/github/tasminions/blog/coverage)
+[![Codecrystal](https://img.shields.io/badge/code-crystal-5CB3FF.svg)](http://codecrystal.herokuapp.com/crystalise/tasminions/blog/master)
 # Blog
 
 Check it out on heroku! http://tasminionsblog.herokuapp.com/
