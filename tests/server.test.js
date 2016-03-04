@@ -2,10 +2,10 @@
 require('env2')('./config.env');
 // require node modules
 var tape          = require('wrapping-tape');
-const redis       = require('redis');
 // require local modules
-const server      = require('./../lib/server.js');
+const server      = require('./../lib/server.js').obj;
 const db          = require("../lib/db.js");
+const client      = require('./../lib/server.js').client;
 
 function authenticate(server, username, goodOrBad, callback){
   newUser(server, username);
@@ -31,10 +31,9 @@ function addHeader(username, goodOrBad, options) {
 function newUser(server, username, callback) {
   const newUserObj = {
     "username": username,
-    "image": 'http://fillmurray.com/200/200', isAdmin: false,
+    "isAdmin": false,
     "secret": process.env.PASSWORD,
-    "email": "gorilla@apes.primate",
-    "spiel": 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    "email": "gorilla@apes.primate"
   };
   const addUserOptions = {
     method:'GET',
@@ -80,11 +79,6 @@ function getDashboard(server, callback){
 tape = tape({
   // at the beginning of each test suite...
   startup: function(t){
-   // start server
-    server.start(function(err){
-      console.log('server has started and is listening on ',server.info.uri);
-      console.log('TESTING SERVER AND ROUTING BEHAVIOUR');
-    });
   },
   // at the end of each test suite...
   teardown: function(t){
@@ -147,6 +141,9 @@ tape( 'Testing /dashboard route with bad params', function(t){
   t.plan(1);
   // db has been flushed so new user needs to be added
   authenticate(server, 'chimp', 'bad', function(res){
+    db.getUser(client, 'chimp', function(ans){
+      console.log(ans);
+    })
     t.equal( res.statusCode, 401,'/dashboard request with incorrect password results in a 401 status Code');
   });
 });
@@ -215,3 +212,8 @@ tape('Testing /editpost/{id} will retrieve the selected post', function(t){
     });
   });
 });
+tape('final teardown',function(t){
+  client.flushdb();
+  client.end();
+  t.end();
+})
