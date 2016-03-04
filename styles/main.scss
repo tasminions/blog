@@ -41,30 +41,48 @@ body{
   left: 15%;
 }
 .namelabel{
+  @media (min-width: 1200px){
+    width: 12%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+  }
   color: white;
     /* background-color: grey; */
     /* margin-left: 15%; */
     text-decoration: none;
     font-size: 0.8em;
     font-family: "Raleway";
-    padding: 2%;
+    padding: 1%;
     background-color: #544e38;
     box-shadow: 1px 0px 4px white;
     border-radius: 6px;
     width: 40%;
     margin-left: 30%;
-    margin-top: 70%;
+    margin-top: 11%;
+}
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+.writePost{
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  display: block;
 }
 .userInfo{
   background-image: url("http://img04.deviantart.net/3f98/i/2012/236/1/6/monkey_png_by_captainjackharkness-d5cbs1q.png");
-background-size: cover;
+background-size: auto 100%;
+background-repeat: no-repeat;
 background-position: center;
 height: 12em;
-text-align: center
+text-align: center;
+
 
 }
 .empty{
-  margin-top: 10%;
+  margin-top: 15%;
 }
 
 .hide {
